@@ -58,7 +58,7 @@ Player.prototype.update = function() {
 Player.prototype.render = function() {
   var image = new Image();
   image.src = 'images/char-pink-girl.png';
-    ctx.drawImage(image, 200, 405);
+    ctx.drawImage(image, this.x, this.y);
 };
 
 Player.prototype.reset = function() {

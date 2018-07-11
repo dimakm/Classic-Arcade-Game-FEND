@@ -1,4 +1,36 @@
-let level = 0;
+let score = $(".score");
+let scoreCounter = 0;
+let lives = $(".lives");
+let liveCounter = 3;
+
+
+//increase the score
+function scoreUp() {
+  scoreCounter ++ ;
+  score.text(scoreCounter);
+};
+
+//decrease the lives count
+function playerDies(){
+  if (liveCounter > 1){
+  liveCounter --;
+  lives.text(liveCounter);
+}
+else {
+  liveCounter = 0 ;
+  lives.text(liveCounter);
+  setTimeout (function(){ window.alert('game over! your score is '+ scoreCounter);
+  resetGame(0,3);} , 500 ) ;
+}
+};
+
+function resetGame(a, b){
+  scoreCounter = a;
+  score.text(scoreCounter);
+  liveCounter = b;
+  lives.text(liveCounter);
+};
+
 // Enemies our player must avoid
 var Enemy = function(speed, x, y) { //the parameters are the enemies speed and the x,y coordinat
     this.speed = speed;
@@ -33,7 +65,7 @@ var enemyXlocation = [-700, -200];
 //go through the array enemyStartYLocation and for each Y and each X push a new enemy object in the allEnemies array.
 enemyStartYLocation.forEach(function(yCoordinate) {
       enemyXlocation.forEach(function(xCoordinate) {
-        var randomSpeed = 50 * Math.floor(Math.random() * 10 + 1); //generate random speeds for the enemy
+        var randomSpeed = 50 * Math.floor(Math.random() * 5 + 1); //generate random speeds for the enemy
         enemy = new Enemy(randomSpeed, xCoordinate, yCoordinate);
         allEnemies.push(enemy);
     });
@@ -50,15 +82,30 @@ var Player = function(x , y) {
 
 const player = new Player(200, 400);
 
+//check the collision by going through the allEnemies array and compare the players position to the enemy's position
+//the number 85 and 50 are half the dimension of the bug
+Player.prototype.checkCollisions = function() {
+  for(var i=0; i<allEnemies.length; i++){
+  if (this.x < allEnemies[i].x + 85 &&
+        this.x + 85 > allEnemies[i].x &&
+        this.y < allEnemies[i].y + 50 &&
+        50 + this.y > allEnemies[i].y) {
+        this.x = 200;
+        this.y = 400;
+        playerDies();
+      };
+    };
+};
 
 Player.prototype.update = function() {
+  this.checkCollisions();
 };
 
 
 Player.prototype.render = function() {
-  var image = new Image();
-  image.src = 'images/char-pink-girl.png';
-    ctx.drawImage(image, this.x, this.y);
+      var image = new Image();
+      image.src = 'images/char-pink-girl.png';
+        ctx.drawImage(image, this.x, this.y);
 };
 
 Player.prototype.reset = function() {
@@ -72,38 +119,37 @@ Player.prototype.reset = function() {
 // then we add and subtract depending on the key and the position .
 Player.prototype.handleInput = function(key) {
 
-    if (key == 'up' && this.y > 0) {
-      console.log('moving up up up'); //this line is for testing
+    if (key == 'up' && this.y > -16) {
         this.y -= 83;
+        if ( this.y <= -15) {
+          //if the player reached the water at top of the canvas,
+          //we'll return the player back to the start point and we increase the score
+          setTimeout(function() {
+              player.reset();
+              scoreUp();
+            }, 100);
+        };
     };
 
-    if (key == 'down' && this.y < 405) {
-      console.log('moving down'); //this line is for testing
+    if (key == 'down' && this.y < 400) {
         this.y += 83;
     };
 
     if (key == 'left' && this.x > 0) {
-      console.log('moving left'); //this line is for testing
         this.x -= 102;
     };
 
-    if (key == 'right' && this.x < 405) {
-      console.log('moving right'); //this line is for testing
+    if (key == 'right' && this.x < 400) {
         this.x += 102;
     };
-//if the player reached the water at top of the canvas,
-//we'll return the player back to the start point and we add 1 to the level
-    if (this.y <= 0) {
-      level += 1;
-        setTimeout(function() {
-            this.x = 200;
-            this.y = 405;
-        }, 500);
-        window.alert('yaaay you are one level up');
 
 
-    };
 };
+
+function win() {
+
+}
+
 
 
 // This listens for key presses and sends the keys to your

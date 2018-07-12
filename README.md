@@ -16,7 +16,7 @@ HOW TO RUN:
 
 You can clone or download the repository from [here](https://github.com/dimakm/Classic-Arcade-Game-FEND), when it is downloaded to your local machine find the index.html file and open it in your browser so the game will run.
 
-or you can simply [Play here]( http://htmlpreview.github.io/?https://github.com/dimakm/Classic-Arcade-Game-FEND/blob/master/index.html )
+or you can directly [Play here](https://dimakm.github.io/Classic-Arcade-Game-FEND/)
 
  
 -----------------------------------------------------------------------------

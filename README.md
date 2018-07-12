@@ -20,8 +20,12 @@ or you can directly [Play here](https://dimakm.github.io/Classic-Arcade-Game-FEN
 
  
 -----------------------------------------------------------------------------
+REFERENCES AND DEPENDENCIES :
+
 The sound files are from https://freesound.org 
 
-The hero photo is edited by Photoshop to be used in the Game Over screen
+The hero photo is edited by me using Photoshop to be used in the Game Over screen
 
 A reference I used  : https://www.w3schools.com/ 
+
+Slack project 3 channel was a good reference and a helper to answer my questions too

@@ -29,12 +29,20 @@ else {
  } , 500 ) ;
 }
 };
-function resetGame(a, b){
-  scoreCounter = a;
+
+/* restart the game when we click on play again in the game over screen .
+so we reset the score to 0; the lives to 3, we put the player in the beginning position,
+hide the game over screen and we show the game canvas again*/
+$(".restart").on('click', function() {
+  scoreCounter = 0;
   score.text(scoreCounter);
-  liveCounter = b;
+  liveCounter = 3;
   lives.text(liveCounter);
-};
+  player.reset() ;
+  gameOver.hide();
+  document.getElementById("canvasArea").style.visibility = "visible";
+});
+
 
 // Enemies our player must avoid
 var Enemy = function(speed, x, y) { //the parameters are the enemies speed and the x,y coordinat

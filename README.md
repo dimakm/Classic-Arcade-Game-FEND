@@ -21,5 +21,6 @@ or you can simply [Play here]( http://htmlpreview.github.io/?https://github.com/
  
 -----------------------------------------------------------------------------
 The sound files are from https://freesound.org 
+
 The hero photo is edited by Photoshop to be used in the Game Over screen
 

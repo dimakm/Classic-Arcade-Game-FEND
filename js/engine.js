@@ -26,6 +26,8 @@ var Engine = (function(global) {
 
     canvas.width = 505;
     canvas.height = 606;
+   canvas.setAttribute("id", "canvasArea"); //added this to be able to hide the canvas when game is over
+
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself

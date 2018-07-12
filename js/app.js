@@ -10,20 +10,25 @@ function scoreUp() {
   score.text(scoreCounter);
 };
 
-//decrease the lives count
+//decrease the lives count and when it becomes zero the game is over so it shows the gamover part of the screen and hides the game canvas
 function playerDies(){
   if (liveCounter > 1){
-  liveCounter --;
-  lives.text(liveCounter);
+    var sound = new Audio("life-lost.wav");// I got the sounds from https://freesound.org
+    sound.play();
+    liveCounter --;
+    lives.text(liveCounter);
 }
 else {
   liveCounter = 0 ;
   lives.text(liveCounter);
-  setTimeout (function(){ window.alert('game over! your score is '+ scoreCounter);
-  resetGame(0,3);} , 500 ) ;
+  var sound = new Audio("game-over.wav");
+  sound.play();
+  setTimeout (function(){
+   gameOver.show();   //show the game over part
+   document.getElementById("canvasArea").style.visibility = "hidden";//hide the canvas
+ } , 500 ) ;
 }
 };
-
 function resetGame(a, b){
   scoreCounter = a;
   score.text(scoreCounter);

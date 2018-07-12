@@ -12,11 +12,10 @@ The hero has 3 lives, the number decreases and a sound plays each time she is hi
 You can play it again by clicking Play again in the Game Over screen.
 
 HOW TO RUN:
+You can clone or download the reposetory from [here](https://github.com/dimakm/Classic-Arcade-Game-FEND) and play the downloaded game on your computer.
+or you can simply [Play here]( http://htmlpreview.github.io/?https://github.com/dimakm/Classic-Arcade-Game-FEND/blob/master/index.html )
 
-[Play here]( http://htmlpreview.github.io/?https://github.com/dimakm/Classic-Arcade-Game-FEND/blob/master/index.html )
-
-or you can download the reposetory from [here](https://github.com/dimakm/Classic-Arcade-Game-FEND) and play the downloaded game on your computer.
-
+ 
 -----------------------------------------------------------------------------
 The sound files are from https://freesound.org 
 The hero photo is edited by Photoshop to be used in the Game Over screen

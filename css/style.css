@@ -1,15 +1,23 @@
 body {
     text-align: center;
     background-color: #536ad5 ;
-
 }
 
+/*the top panel where the score and lives are*/
 #panel {
-font-weight: bold;
-font-size: 25px;
-color:#000 ;
+    font-weight: bold;
+    font-size: 25px;
+    color:white;
+    padding-top: 40px;
+}
+
+.restart {
+    font-weight: bold;
+    font-size: 25px;
+    color:white;
+    cursor: pointer;
 }
 
 span {
-  margin-left: 10px;
+    margin-left: 10px;
 }

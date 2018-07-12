@@ -14,7 +14,7 @@ You can play it again by clicking Play again in the Game Over screen.
 
 HOW TO RUN:
 
-You can clone or download the reposetory from [here](https://github.com/dimakm/Classic-Arcade-Game-FEND), when it is downloaded to your local machine find the index.html file and run it in your browser.
+You can clone or download the repository from [here](https://github.com/dimakm/Classic-Arcade-Game-FEND), when it is downloaded to your local machine find the index.html file and run it in your browser.
 
 or you can simply [Play here]( http://htmlpreview.github.io/?https://github.com/dimakm/Classic-Arcade-Game-FEND/blob/master/index.html )
 

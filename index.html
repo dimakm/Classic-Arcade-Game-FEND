@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
 </head>
 <body>
-  <div id='panel'><span>Score: </span> <span class='score'> 0 </span> 
-    <span> Lives: </span> <span class='lives'> 3 </span>
- </div>
-
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
+    <div id='panel'>
+        <span>Score:</span> <span class='score'>0</span>
+        <span>Lives:</span> <span class='lives'>3</span>
+    </div>
+	<!-- this div is hidden at the beginning and it shows when the game is over -->
+    <div class="gameOver">
+        <img alt="GameOver" src="images/gameOver.png">
+        <p class="restart">Play again</p>
+    </div>
+    <script src="js/resources.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+    <script src="js/engine.js">
+    </script>
 </body>
 </html>
